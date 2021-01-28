@@ -37,7 +37,7 @@ function addDeposit(id1, id2, id3, id4){
 
 
 
-        console.log("from inside", "input", totalNew, "init", initBalNumber);
+        // console.log("from inside", "input", totalNew, "init", initBalNumber);
         
     })
     
@@ -63,11 +63,11 @@ function updateWithdraw(id1, id2, id3, id4){
         var newTotalBal = initTotalBalNumber - addAmountNumber;
         document.getElementById(id4).innerText = newTotalBal;
         
-        document.getElementById(id4).value = "";
+        // document.getElementById(id4).value = "";
 
 
 
-        console.log("from inside", "input", totalNew, "init", initBalNumber);
+        // console.log("from inside", "input", totalNew, "init", initBalNumber);
         
     })
     
