@@ -21,8 +21,12 @@ function addDeposit(id1, id2, id3, id4){
     addButton.addEventListener("click", function(){
         var addAmount = document.getElementById(id2).value; 
         var addAmountNumber = parseFloat(addAmount);
-
-        var initBal = document.getElementById(id3).innerText; 
+        if (addAmountNumber < 0){
+            alert("Deposit cannot be negative.");
+            document.getElementById(id2).value = "";
+        } else{
+        
+            var initBal = document.getElementById(id3).innerText; 
         var initBalNumber = parseFloat(initBal);
         var totalNew = addAmountNumber + initBalNumber;
         document.getElementById(id3).innerText = totalNew;
@@ -34,6 +38,9 @@ function addDeposit(id1, id2, id3, id4){
         document.getElementById(id4).innerText = newTotalBal;
         
         document.getElementById(id4).value = "";
+        } 
+
+        
 
 
 
@@ -52,16 +59,24 @@ function updateWithdraw(id1, id2, id3, id4){
         var addAmount = document.getElementById(id2).value; 
         var addAmountNumber = parseFloat(addAmount);
 
-        var initBal = document.getElementById(id3).innerText; 
-        var initBalNumber = parseFloat(initBal);
-        var totalNew = addAmountNumber + initBalNumber;
-        document.getElementById(id3).innerText = totalNew;
-        document.getElementById(id2).value = "";
+        if(addAmountNumber < 0){
+            alert("withdarw number cannot be negative.");
+            document.getElementById(id2).value = "";
+        } else {
 
-        var initTotalBal = document.getElementById(id4).innerText;
-        var initTotalBalNumber = parseFloat(initTotalBal);
-        var newTotalBal = initTotalBalNumber - addAmountNumber;
-        document.getElementById(id4).innerText = newTotalBal;
+            var initBal = document.getElementById(id3).innerText; 
+            var initBalNumber = parseFloat(initBal);
+            var totalNew = addAmountNumber + initBalNumber;
+            document.getElementById(id3).innerText = totalNew;
+            document.getElementById(id2).value = "";
+    
+            var initTotalBal = document.getElementById(id4).innerText;
+            var initTotalBalNumber = parseFloat(initTotalBal);
+            var newTotalBal = initTotalBalNumber - addAmountNumber;
+            document.getElementById(id4).innerText = newTotalBal;
+        }
+        
+        
         
         // document.getElementById(id4).value = "";
 
